@@ -14,7 +14,7 @@ class Definition:
 
         # return tuple(df.loc[df['word']== self.term.title()]['meaning'])
 
-
-user_input = input("Enter the word : ")
-obj = Definition(user_input)
-print(obj.get())
+if __name__=="__main__":
+    user_input = input("Enter the word : ")
+    obj = Definition(user_input)
+    print(obj.get())
