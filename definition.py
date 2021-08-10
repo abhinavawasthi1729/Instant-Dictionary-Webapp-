@@ -10,7 +10,7 @@ class Definition:
         if len(df.loc[df['word']== self.term.title()]) != 0:
             return tuple(df.loc[df['word']== self.term.title()]['meaning'])
         else:
-            return f"sorry! no meaning found for {self.term}"
+            return str(f"sorry! no meaning found for {self.term}")
 
         # return tuple(df.loc[df['word']== self.term.title()]['meaning'])
 
