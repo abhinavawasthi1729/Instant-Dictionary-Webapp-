@@ -2,7 +2,7 @@ import justpy as jp
 import sys
 sys.path.append('E:\Python projects\Instant-dictionary-webapp')
 from definition import Definition
-
+from webapp.layout import DefaultLayout
 
 class Dictionary:
     path= "/dictionary"
@@ -10,7 +10,11 @@ class Dictionary:
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind= True)
-        div = jp.Div(a=wp,  classes = "bg-gray-200 h-screen")
+
+        lay = DefaultLayout(a=wp, view = "hHh lpR fFf")
+        container = jp.QPageContainer(a=lay)
+
+        div = jp.Div(a=container,  classes = "bg-gray-200 h-screen")
         jp.Div(a=div, text= "Instant dictionary", classes= "text-4xl m-2")
         jp.Div(a= div, text="Get definition of any english word", classes="text-lg p-2")
         input_div = jp.Div(a=div )

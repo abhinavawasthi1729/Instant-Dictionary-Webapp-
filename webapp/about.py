@@ -1,11 +1,16 @@
 import justpy as jp
+from webapp.layout import DefaultLayout
 
 class About:
     path = "/about"
 
     def serve(self):
         wp = jp.QuasarPage(tailwind= True)
-        div = jp.Div(a=wp,  classes = "bg-gray-200 h-screen")
+
+        lay = DefaultLayout(a=wp, view = "hHh lpR fFf")
+        container = jp.QPageContainer(a=lay)
+
+        div = jp.Div(a=container,  classes = "bg-gray-200 h-screen")
         jp.Div(a = div, text= "About page", 
                 classes = "text-4xl m-2" )
         jp.Div( a = div, text ="""
@@ -18,6 +23,6 @@ class About:
         PageMaker including versions of Lorem Ipsum.
         working 
         
-        """, classes= "text-lg")
+        """, classes= "text-lg p-2")
         return wp
 
