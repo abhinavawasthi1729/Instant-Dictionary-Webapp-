@@ -3,8 +3,9 @@ import sys
 sys.path.append('E:\Python projects\Instant-dictionary-webapp')
 from definition import Definition
 from webapp.layout import DefaultLayout
+from webapp.page import Page
 
-class Dictionary:
+class Dictionary(Page):
     path= "/dictionary"
 
     @classmethod
